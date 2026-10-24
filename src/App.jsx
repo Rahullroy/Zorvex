@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Card from '../components/card'
 import ProjectCard from '../components/projectcard'
+import SideBar from '../components/SideBar'
+import Heading from '../components/Heading'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,47 +35,48 @@ function App() {
 
   return (
     <>
-    <div className='PARENT max-w-7xl mx-auto px-6 md:px-8 py-6 flex flex-col gap-6'>
-           <div>
-        <ProjectCard/>
-      
-    </div>
-    <div className='flex flex-col items-start justify-between gap-1 bg-white w-full rounded-2xl overflow-hidden relative m-2 p-4  border border-gray-100'>
-      <div className='flex w-full items-center justify-between'>
-          <h1 className=' text-3xl font-bold m-3 ml-4'>ALL PROJECT</h1>
-          <div className='flex items-center justify-between gap-1'>
-            <h1><input 
-              type="text" 
-              placeholder="Search..."
-              className='padding: "8px",
-              width: "250px",
-              borderRadius: "4px",
-              border: "1px solid #ccc"
-              m-3'
-           />  
-          </h1>
-          <button className='border border-black text-xs font-semibold px-3 py-1 rounded-full bg-blue-200 m-2' >+ New Project</button>
-          </div>
+    <div className="flex min-h-screen bg-gray-100">
+      <div className='w-40 shrink-0'>
+        <SideBar/>
       </div>
 
-      <div className='grid items-stretch grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
-      {arr.map(function(elem){
-        return (
-        <Card key={elem.title}
-          title={elem.title}
-          progress={elem.progress}
-          level={elem.level}
-          img = {elem.img}/>
-        )
-      })}
-    
- 
-    </div>
-    </div>
-   
-    </div>
 
- 
+      <div className='<div className="Children min-w-0 px-6 py-6 flex flex-col gap-6">'>
+          <div>
+            <Heading/>
+          </div>
+          <div>
+            <ProjectCard/>  
+          </div>
+          <div className="flex-1 min-w-0 px-6 py-6 flex flex-col gap-6">
+              <div className='flex w-full items-center justify-between'>
+                  <h1 className=' text-3xl font-bold m-3 ml-4'>ALL PROJECT</h1>
+                  <div className='flex items-center justify-between gap-1'>
+                      <h1><input 
+                        type="text" 
+                        placeholder="Search..."
+                        className="px-3 py-2 w-250px rounded border border-gray-300 m-3 text-sm outline-none"
+                        />
+                      </h1>
+                    <button className='border border-black text-xs font-semibold px-3 py-1 rounded-full bg-blue-200 m-2' >+ New Project</button>
+                  </div>
+                </div>
+
+          <div className='grid items-stretch grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
+              {arr.map(function(elem){
+                return (
+                  <Card key={elem.title}
+                        title={elem.title}
+                        progress={elem.progress}
+                        level={elem.level}
+                        img = {elem.img}/>
+                      )
+                })}
+          </div>
+          </div>
+   
+        </div>
+    </div> 
    </>
     
   )
