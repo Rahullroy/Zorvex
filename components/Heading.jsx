@@ -2,7 +2,7 @@ import React from "react";
 
 const Heading = (props)=>{
     return(
-        <div className="flex items-center justify-between g-2 bg-white rounded-2xl w-full m-2 py-6 px-8">
+        <div className="flex items-center justify-between g-2 bg-white rounded-md w-full m-2 py-6 px-8">
             <div className="flex flex-col">
                 <h1>Projects:{props.Projects}</h1>
                 <p>Manage and monitor all active projects</p>
